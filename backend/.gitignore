@@ -1,0 +1,12 @@
+# Node.js backend
+node_modules/
+.env
+.env.*.local
+
+# Compilación / build
+dist/
+build/
+coverage/
+
+# Logs
+*.log

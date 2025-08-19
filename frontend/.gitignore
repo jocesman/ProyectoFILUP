@@ -1,0 +1,11 @@
+# React + Vite frontend
+node_modules/
+.env
+.env.*.local
+
+# Compilación / build
+dist/
+build/
+
+# Logs
+*.log
