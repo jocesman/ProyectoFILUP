@@ -13,7 +13,7 @@
 
 ## 📖 Descripción
 
-PokeManager es una aplicación web fullstack que permite gestionar entrenadores Pokémon y explorar la Pokédex completa. Desarrollado como parte del **Proyecto FILUP - Fullstack Test**, combina una API REST robusta con una interfaz moderna y responsiva.
+PokeManager es una aplicación web fullstack que permite gestionar entrenadores Pokémon y explorar la Pokédex. Desarrollado como parte del **Proyecto FILUP - Fullstack Test**, combina una API REST robusta con una interfaz moderna y responsiva.
 
 ### ✨ Características Principales
 
@@ -21,9 +21,8 @@ PokeManager es una aplicación web fullstack que permite gestionar entrenadores 
 - **📱 Pokédex Interactiva**: Exploración de todos los Pokémon con búsqueda y paginación
 - **📊 Exportación de Datos**: Descarga de entrenadores en CSV y Pokédex en PDF
 - **🔍 Búsqueda Avanzada**: Filtros inteligentes para Pokémon por nombre
-- **📋 Documentación API**: Swagger/OpenAPI integrado
+- **📋 Documentación API**: Swagger integrado
 - **🎨 Diseño Responsivo**: Optimizado para móviles, tablets y desktop
-- **⚡ Alto Rendimiento**: Lazy loading y optimizaciones de red
 
 ---
 
@@ -42,7 +41,6 @@ PokeManager es una aplicación web fullstack que permite gestionar entrenadores 
 - **React 18** + **TypeScript** - Interface de usuario
 - **Vite** - Bundler y herramientas de desarrollo
 - **CSS3** - Estilos personalizados con gradientes y animaciones
-- **Responsive Design** - Mobile-first approach
 
 ### Servicios Externos
 - **PokeAPI** - Datos oficiales de Pokémon
@@ -219,60 +217,6 @@ pokemanager/
 │   └── package.json
 └── README.md
 ```
-
----
-
-## 🎨 Capturas de Pantalla
-
-### Dashboard Principal
-![Dashboard](https://via.placeholder.com/800x400/2a75bb/ffffff?text=PokeManager+Dashboard)
-
-### Gestión de Entrenadores
-![Entrenadores](https://via.placeholder.com/800x400/ffcb05/2a75bb?text=Gestión+de+Entrenadores)
-
-### Pokédex Interactiva
-![Pokedex](https://via.placeholder.com/800x400/ff1c1c/ffffff?text=Pokédex+Interactiva)
-
----
-
-## 🧪 Testing
-
-```bash
-# Backend tests
-cd backend
-npm run test
-
-# Frontend tests
-cd frontend
-npm run test
-```
-
----
-
-## 📦 Deployment
-
-### Backend (Railway/Heroku)
-
-```bash
-# Build del proyecto
-npm run build
-
-# Variables de entorno en producción
-PORT=8080
-MONGODB_URI=mongodb+srv://...
-NODE_ENV=production
-```
-
-### Frontend (Netlify/Vercel)
-
-```bash
-# Build del proyecto
-npm run build
-
-# Variable de entorno
-VITE_API_URL=https://tu-api.herokuapp.com/api
-```
-
 ---
 
 ## 🤝 Contribución
@@ -346,7 +290,7 @@ Este proyecto está bajo la Licencia ISC - ver el archivo [LICENSE](LICENSE) par
 **Jose Ignacio Cespedes**
 - Proyecto: **FILUP - Fullstack Test**
 - Tecnologías: React, Node.js, TypeScript, MongoDB
-- Email: [tu.email@ejemplo.com](mailto:tu.email@ejemplo.com)
+- Email: [jicespedes1976@gmail.com](mailto:jicespedes1976@gmail.com)
 
 ---
 
