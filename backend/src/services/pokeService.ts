@@ -4,12 +4,10 @@ import axios from "axios";
 type PokeListItem = { name: string; url: string };
 
 export async function fetchAllPokemonNames(): Promise<PokeListItem[]> {
-  // “Todos” con un límite grande para no iterar múltiples requests
+  // Límite amplio para no iterar múltiples requests
   const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon", {
     params: { limit: 200000, offset: 0 },
   });
-  const total = data.results as PokeListItem[];
-  console.log(`Total Pokémon encontrados: ${total[0]}`);
   return data.results as PokeListItem[];
 }
 
@@ -24,7 +22,7 @@ export function applySearchSortPaginate(
     list = list.filter((i) => i.name.toLowerCase().includes(q));
   }
 
-  // Orden alfabético SIEMPRE
+  // Orden alfabético
   list = list.sort((a, b) => a.name.localeCompare(b.name));
 
   if ((limit && !page) || (!limit && page)) {

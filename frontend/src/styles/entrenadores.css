@@ -1,0 +1,472 @@
+/* entrenadores.css - Estilo para gestión de entrenadores*/
+
+.entrenadores-container {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* Panel izquierdo del Formulario */
+.form-panel {
+  flex: 0 0 40%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid #2a75bb;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.form-panel h2 {
+  color: #2a75bb;
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #ffcb05;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.entrenador-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.form-input {
+  padding: 14px 16px;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2a75bb;
+  box-shadow: 0 0 0 3px rgba(42, 117, 187, 0.1);
+}
+
+.form-input.error {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.medallas-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.medallas-slider {
+  flex: 1;
+}
+
+.medallas-value {
+  min-width: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: #2a75bb;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.submit-btn:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.submit-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, #20c997, #28a745);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #495057, #6c757d);
+  transform: translateY(-2px);
+}
+
+/* Panel derecho - donde está la lista de entrenadores */
+.list-panel {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid #ffcb05;
+  min-height: 0;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #2a75bb;
+}
+
+.list-header h2 {
+  color: #2a75bb;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.download-csv-btn {
+  background: linear-gradient(135deg, #2a75bb, #1c5ca3);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(42, 117, 187, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.download-csv-btn:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.download-csv-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, #1c5ca3, #2a75bb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(42, 117, 187, 0.4);
+}
+
+.download-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Tabla de entrenadores */
+.entrenadores-table-container {
+  flex: 1;
+  overflow: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.entrenadores-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 600px;
+}
+
+.entrenadores-table th {
+  background: linear-gradient(135deg, #2a75bb, #1c5ca3);
+  color: white;
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+}
+
+.entrenadores-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e9ecef;
+  color: #2c3e50;
+}
+
+.entrenadores-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.entrenadores-table tr:hover {
+  background: #e9ecef;
+  transition: background 0.2s;
+}
+
+.entrenadores-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Acciones */
+.acciones-cell {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: white;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #fd7e14, #ffc107);
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #c82333, #dc3545);
+  transform: translateY(-1px);
+}
+
+/* Estados vacíos */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-state h3 {
+  color: #2a75bb;
+  margin-bottom: 10px;
+}
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex: 1;
+}
+
+/* Notificación de la descarga del archivo CSV */
+.download-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive de entrenadores */
+@media (max-width: 1024px) {
+  .entrenadores-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-panel,
+  .list-panel {
+    flex: 1;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .entrenadores-container {
+    padding: 15px;
+  }
+  
+  .form-panel,
+  .list-panel {
+    padding: 20px;
+  }
+  
+  .list-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .acciones-cell {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .entrenadores-container {
+    padding: 10px;
+  }
+  
+  .form-panel,
+  .list-panel {
+    padding: 15px;
+  }
+  
+  .entrenadores-table {
+    font-size: 14px;
+  }
+  
+  .entrenadores-table th,
+  .entrenadores-table td {
+    padding: 10px 8px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.entrenadores-table tr {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar personalizado para tabla de entrenadores */
+.entrenadores-table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.entrenadores-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.entrenadores-table-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #2a75bb, #1c5ca3);
+  border-radius: 10px;
+}
+
+.entrenadores-table-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1c5ca3, #2a75bb);
+}
+
+.form-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.form-panel::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #2a75bb, #1c5ca3);
+  border-radius: 10px;
+}
