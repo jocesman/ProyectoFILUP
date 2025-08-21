@@ -1,3 +1,4 @@
+//src/api/entrenadores.ts
 import { apiGet, apiJson } from "../pages/client";
 
 export type Entrenador = { _id: string; nombre: string; apellido: string; telefono: string; medallas: number };
@@ -7,4 +8,4 @@ export const createEntrenador = (data: Omit<Entrenador, "_id">) => apiJson<Entre
 export const updateEntrenador = (id: string, data: Partial<Omit<Entrenador, "_id">>) =>
   apiJson<Entrenador>(`/entrenadores/${id}`, "PUT", data);
 export const deleteEntrenador = (id: string) =>
-  fetch(`${import.meta.env.VITE_API_URL || "http://localhost:3001/api"}/entrenadores/${id}`, { method: "DELETE" });
+  fetch(`${import.meta.env.VITE_API_URL || "http://localhost:3000/api"}/entrenadores/${id}`, { method: "DELETE" });

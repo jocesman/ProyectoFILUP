@@ -1,3 +1,4 @@
+//App.tsx
 import { useState } from "react";
 import Pokedex from "./pages/Pokedex.tsx";
 import Entrenadores from "./pages/Entrenadores.tsx"; 

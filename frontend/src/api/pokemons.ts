@@ -1,3 +1,4 @@
+//src/api/pokemons.ts
 import { apiGet, apiDownload } from "../pages/client";
 
 export type PokeItem = { name: string; url: string };

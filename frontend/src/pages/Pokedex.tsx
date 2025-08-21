@@ -1,3 +1,4 @@
+//src/pages/Pokedex.tsx
 import { useEffect, useState } from "react";
 import { getPokemons, downloadPokedexPdf } from "../api/pokemons";
 import "../styles/pokedex.css";
@@ -45,11 +46,6 @@ export default function Pokedex() {
         const res = await getPokemons({ search, page, limit });
         console.log(res);
         setData({ items: res.data, pages: res.meta.pages, total: res.meta.total });
-        
-        // Si hay pokémons en la lista, selecciona el primero automáticamente
-        if (res.data.length > 0 && !selectedPokemon) {
-          fetchPokemonDetails(res.data[0].url);
-        }
       } catch (err) {
         console.error(err);
       }

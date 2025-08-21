@@ -1,3 +1,4 @@
+// src/pages/client.ts
 export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 export async function apiGet<T>(path: string, params?: Record<string, any>): Promise<T> {

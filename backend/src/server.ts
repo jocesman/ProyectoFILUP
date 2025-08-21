@@ -3,7 +3,8 @@ import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import api from "./routes";
 import chalk from "chalk";
-
+import { specs, swaggerUi } from '../src/config/swagger';
+  
 const server = express();
 server.use(cors());
 server.use(express.json());
@@ -35,5 +36,10 @@ server.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 server.use("/api", api);
+// Configuración de Swagger
+server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
+  customCss: '.swagger-ui .topbar { display: none }',
+  customSiteTitle: 'PokeManager API Documentation'
+}));
 
 export default server;

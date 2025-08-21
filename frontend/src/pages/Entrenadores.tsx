@@ -1,3 +1,4 @@
+// src/pages/Entrenadores.tsx
 import { useEffect, useState } from "react";
 import { listEntrenadores, createEntrenador, updateEntrenador, deleteEntrenador, type Entrenador } from "../api/entrenadores";
 import "../styles/entrenadores.css";
